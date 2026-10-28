@@ -1,0 +1,28 @@
+﻿
+@model Registration.Models.Reg;
+<h2>@(Model.Id == null ? "Add New" : "Edit ")</h2>
+<form asp-action="save" method="post">
+    <input type="hidden" name="Id" value="@Model"/>
+    <div>
+    <lable> Name</lable>
+    <input type="Text"name="Name" value="@Model.Name"/>
+</div></<br />
+    <lable> Qualification</lable>
+    <input type="Text" name="Qualification" value="@Model.Qualification" />
+    </div></<br />
+    <lable> Age</lable>
+    <input type="Text" name="Age" value="@Model.Age" />
+    </div></<br />
+    <lable> Mobile</lable>
+    <input type="Text" name="Mobile" value="@Model.Mobile" />
+    </div></<br />
+    
+<div>
+    <label>Email</label>
+        <input type="text" name="Email" value="@Model.Email" />
+
+</div>
+<button type="submit">@(Model.Id== null ? "save":"update")</button>
+</form>
+<a asp-action="Index">Back to List</a>
+
